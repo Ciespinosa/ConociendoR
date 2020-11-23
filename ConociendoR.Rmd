@@ -1,0 +1,644 @@
+---
+title: Conociendo R
+author: "Carlos Iván Espinosa"
+date: "23 de noviembre de 2020"
+output: 
+   revealjs::revealjs_presentation:
+    theme: moon
+    highlight: espresso
+    transition: convex
+    self_contained: false
+    reveal_options:
+      slideNumber: true
+      previewLinks: true
+      incremental: true
+    reveal_plugins: ["zoom", "chalkboard"]
+---
+
+# Sobre este módulo
+
+##
+<h3> Objetivo</h3>
+<br></br>
+Este módulo tiene como objetivo comprender la lógica funcionamiento del lenguaje R e iniciarla operación de objetos.
+
+##
+<h3> Metas de aprendizaje </h3>
+
+<br></br>
+<br></br>
+Espero que luego de este módulo comprendas la base lógica del funcionamiento y como operar los objetos esto te permitirá entrar en el gran mundo de:
+
+<img src="imagenes/Rlogo.png" width="120"/>
+
+
+##
+
+<h3>__Contenidos__</h3>
+
+> 1. ¿Qué es R? y ¿Por qué R?
+> 2. Instalando R y RStudio
+> 3. Inicio del trabajo en RStudio
+> 4. Operando objetos
+
+
+# ¿Qué es R?
+
+<span class="fragment current visible">
+`R` realmente no es un programa, es un entorno de programación. R es considerado un dialecto del lenguaje _S_  desarrollado por los Laboratorios AT&T Bell.
+</span>
+
+&nbsp;
+
+<span class="fragment current visible">
+`R` es un lenguaje bastante simple el cual está orientado a _Objetos_.
+</span>
+
+
+## 
+
+<br></br> 
+<br></br> 
+
+<h1> ¿Por qué R? </h1>
+
+
+##
+<h3> __Open source (fuente abierta)__ </h3>
+
+
+
+<span class="fragment current visible"> __R__ es un lenguaje open source, <span class="fragment highlight-red"> __GRATUITO__ </span>
+</span>
+
+## 
+<h3> __Desarrolladores__ </h3>
+
+<span class="fragment current visible">
+Tiene una cantidad enorme de desarrolladores, lo cual permite tener información y paquetes de cualquier tipo de análisis desde SIG hasta análisis de grafos.
+</span>
+
+## 
+<h3> __Orientado a gráficos y análisis estadísticos__ </h3>
+<br></br>
+
+> - R es un lenguaje que permite desarrollar gráficos y análisis estadísticos.
+
+
+> - Tiene capacidad para desarrollar pre-procesamiento de datos.
+
+## Un entorno potente
+<br></br>
+
+R es un entorno de programación muy flexible y permite hacer análisis casi de cualquier tipo y muchos desarrolladores han logrado generar funciones de interacción interesantes [ejemplos](https://ciespinosa.github.io)
+
+## Lenguaje de programación
+<br></br>
+
+El hecho de que R sea un lenguaje de programación en lugar de una colección de comandos discretos significa que puede combinar varios comandos, cada uno usando la salida del último, con la combinación resultante siendo bastante poderosa y extremadamente flexible.
+
+# Trabajar en R y RStudio
+
+##
+<h3> Ingresen en la página:</h3>
+
+[ciespinosa.github.io/IntroduccionR.html](https://ciespinosa.github.io/IntroduccionR.html) aquí dispondrán de información para avanzar en el curso.
+
+Trabajaremos usando <img src="imagenes/Rlogo.png" width="50"/> y <img src="imagenes/RStudio-Logo.png" width="85"/>.  
+
+<p> <br> </p>
+
+
+> - Una vez que hemos instalado R y RStudio podremos trabajar con los datos.
+> - Una cosa importante es que RStudio no puede funcionar si no hemos descargado R.
+> - Trabajaremos en RStudio así que no es necesario que despliegue R.
+
+##
+
+<p> <br> </p>
+
+>Nota: "El uso de comandos exige una curva de aprendizaje mayor que el requerido por las interfaces gráficas, pero las ganancias en términos de independencia, creatividad y control no son comparables. Escribir un código supone una comprensión más profunda de aquello que se desea aplicar" (Elousa 2011).
+
+
+## Conozcamos RStudio antes de empezar
+
+![Figura 4. Plataforma RStudio](imagenes/RStudio.jpg)
+
+<small>Como vemos en la figura 4, RStudio está compuesto por cuatro ventanas.  Seguramente en su caso, si acaba de abrir RStudio, le aparecerán únicamente tres ventanas. A continuación, describiré cada una de las ventanas. </small>
+
+
+# Los primeros pasos
+<p> <br> </p>
+
+>Nota: El trabajar con códigos requiere que seamos ordenados y sistemáticos, de no cumplir estos requerimientos tendrá un verdadero dolor de cabeza. 
+
+>- RStudio es una interesante plataforma que nos permite organizar el trabajo. 
+
+>- Siempre que inician un trabajo de análisis siga los pasos propuestos a continuación.
+
+
+## Primer Paso: Crear un proyecto
+<br></br>
+<p class="fragment current visible">
+Crear un proyecto implica definir un directorio desde el cual `R` funcionará.
+</p>
+
+<p class="fragment current visible">
+Obtener un archivo de ejecución `.Rproj`
+</p>
+
+<p class="fragment current visible">
+Generar carpeta en la cual organizaremos nuestros archivos.
+</p>
+
+<span class="fragment current visible">
+<span class="fragment highlight-red">
+Para crear un nuevo proyecto en RStudio debemos seguir los siguientes pasos.
+</span>
+</span>
+
+
+
+## Segundo Paso: Los códigos usados
+<p> <br> </p>
+
+<p class="fragment current visible">
+Si bien podemos trabajar directamente en la consola de R para  ejecutar los códigos, lo mejor es que desde el principio nos acostumbremos a generar <span class="fragment highlight-red">scripts</span>, donde tengamos la información limpia y podamos saber lo que estamos haciendo. 
+</p>
+
+<p class="fragment current visible">
+Un Script es un archivo donde tendremos los códigos de R, referenciados y organizados.
+</p>
+
+
+## Tercer paso: los archivos
+
+<br></br>
+
+En la carpeta que creamos en el primer paso debemos organizar nuestros archivos. Idealmente los archivos deberían estar organizados en:
+
+<br></br>
+
+>1. Datos
+>2. Scripts
+>3. Resultados
+
+
+## Algunos consejos iniciales
+
+<br></br>
+
+<span class="fragment current visible">a. Todos los códigos usados deben siempre ir acompañados de una <span class="fragment highlight-blue">nota</span> que explique lo que están haciendo. La nota debe estar precedida por __#__. 
+</span>
+
+<span class="fragment current visible">
+b. Recuerden siempre colocar sus <span class="fragment highlight-blue">archivos de datos</span> en la carpeta del proyecto que generaron en el tercer paso. </span>
+
+<span class="fragment current visible">
+c. Si está probando cambios en el código, una vez el código funciona, borre el código con error, <span class="fragment highlight-blue">tenga siempre su código limpio</span>.
+</span>
+
+*****
+<span class="fragment current visible">
+d. Ejecute el código desde la consola haciendo clic en la consola en el ícono run ![](imagenes/RStudio_Run.jpg) o  tecleando __ctrl__ y __enter__.
+</span>
+
+<span class="fragment current visible">
+e. Cada vez que en el código iniciamos un nuevo tema, podemos <span class="fragment highlight-blue">poner un título</span> seguido por cuatro guiones medios (- - - -), esto genera en RStudio una estructura de índice que puede ser navegada.
+</span>
+
+<p class="fragment current visible">
+![Figura 5. Estructura del script en RStudio](imagenes/estructura.jpg){#id .class width=630 }
+</p>
+
+****
+<p> <br> </p>
+
+>Nota: Es importante que sea organizado en la ejecución de los códigos, siga los consejos y podrá mantener un código limpio y fácil de acceder y revisar.
+
+
+# El funcionamiento de R
+
+## Vamos a trabajar en R
+
+>1. Abra RStudio y cree un proyecto 
+>2. Genere un Script para escribir el código.
+>3. Ahora a trabajar
+
+****
+
+```{r}
+#Ejecución de comandos e impresión
+
+pi*3
+
+log(234)
+
+```
+
+<h3> ¿Qué pasó? </h3>
+
+Cuando nosotros introducimos un comando en R y lo ejecutamos, podemos ver la salida de esa expresión,  <span class="fragment highlight-blue">R imprime el resultado </span>
+
+
+******
+
+
+```{r}
+##La función de impresión
+
+print(pi*3); print(pi*3, digits = 4) #El ; nos permite separar dos líneas de código
+
+print(log(234), digits = 10)
+```
+
+Como vemos con la función __print__ tenemos la misma salida, imprime la expresión en la consola. Sin embargo, nos permite cambiar ciertas propiedades de lo que se imprime, en este caso controlar el número de decimales.
+
+*****
+
+```{r}
+##Controlar la salida de tablas
+
+print(as.table(matrix(c(5:0,1,0,0),3,3)))
+print(as.table(matrix(c(5:0,1,0,0),3,3)), zero.print = ".")
+```
+
+En este caso el argumento _zero.print_ nos permite decirle que queremos substituir los seros por un puntopodemos cambiar el punto por un "-". Inténtalo y mira lo que obtienes.
+
+
+*****
+
+```{r}
+##La función cat para imprimir vectores
+
+cat("Juan tiene", 17*pi , "años", "...\n")
+
+```
+
+>- La función __cat__ permite imprimir varias cosas juntas, intente usar la expresión print para ejecutar el mismo vector. ¿Qué sucedió?
+
+>- El argumento final __"...\-n"__ nos dice como debería terminar el vector. Remplace los puntos por asteriscos.
+
+
+*****
+<br></br>
+
+>- Hasta aquí, todos los códigos que hemos ejecutado se han impreso en la consola pero no constan en ningún lado, todos los resultados de esos códigos no pueden ser usados para realizar ninguna otra acción.
+
+>- Hemos usado R como una calculadora, la cual nos da un resultado, pero no podemos volver a acceder a ese resultado de ninguna forma.
+
+>- Para acceder a los resultados necesitamos asignar el resultado a un símbolo, un nombre.
+
+*****
+
+<h3>Trabajemos nuevamente en R</h3>
+
+```{r}
+##Asignando resultados a símbolos
+set.seed(23)
+edad <- round(rnorm(5, 25,5),2)
+
+```
+
+<span class="fragment current visible">
+Un momento, algo paso no veo el resultado. 
+</span>
+
+<span class="fragment current visible">
+Puede chequear el "Environment" en RStudio, ¿qué puede ver ahí?. Efectivamente, aparece el nombre edad.
+</span>
+
+*****
+
+<span class="fragment current visible">
+Lo que hemos hecho es usar la función asignar "<-", y hemos asignado el resultado de nuestro código a un símbolo (nombre). Realmente es un símbolo, R reconoce los símbolos, es por eso que __Edad__ no es lo mismo que __edad__
+</span>
+
+<span class="fragment current visible">
+Existen otras formas de asignar, como "=", o "->" pero estas pueden ser confundidas con otras expresiones, como en el caso del "=", o dificiles de comprender en un código, como "->". Es mejor que siempre use "<-" </span>
+
+*****
+
+Ahora, ¿cómo imprimimos el resultado de edad?
+
+```{r}
+#Imprimir los objetos
+print(edad)
+
+edad
+```
+
+>- Como ven, podemos usar la función __print__ o teclear directamente el nombre.
+
+****
+Vamos a jugar un poco.
+
+```{r}
+#Vector de nombres
+
+nom <- c("Juan", "Pedro", "Ana", "Sol", "Juliana")
+
+#Usamos la función cat para imprimir
+
+for(i in 1:length(nom)) cat("La edad de", nom[i], "es", edad[i], "...\n")
+
+```
+
+****
+<br></br>
+
+En esta segunda parte hemos trabajado en la memoria activa de la computadora la memoria RAM
+
+<small>
+
+> Cuando define una variable en el símbolo del sistema como en este caso "edad", la variable se mantiene en su espacio de trabajo (Workspace). El espacio de trabajo se mantiene en la memoria activa de la computadora, pero se puede guardar en el disco cuando sale de R. La definición de la variable permanece en el espacio de trabajo hasta que la elimina.
+
+</small>
+
+<span class="fragment current visible">
+Es lo que vemos en el "Environment" de RStudio
+</span>
+
+
+*****
+
+Podemos definir pedirle a R que nos muestre lo que tiene en su "workspace"
+
+```{r}
+#Listado del workspace
+ls()
+
+```
+
+Podemos pedir que nos diga las característicasde esos objetos
+
+```{r}
+#listado con características
+
+ls.str()
+```
+
+****
+Ahora puede ser que necesite borrar algunos objetos, veamos como lo podemos hacer.
+
+```{r}
+ls(); rm(i); ls()
+```
+
+>- Como ven en la primera salida consta "i", pero en la segunda ya no esta.
+>- Podemos usar la expresión rm(list=ls()) para borrar todos los objetos en el workspace
+>- Podemos usar la expresión rm(list=setdiff(ls(), c("edad", "nom"))), para eliminar todo aquello que no sea "edad" y "nom"
+
+****
+Hasta ahora hemos trabajado en la memoria activa, eso quiere decir, que cuando cerremos R todos los objetos que hemos desarrollado se pierden. Es posible que eso sea lo que quiero, pero seguramente hay resultados que me gustaría grabar en mi disco duro para poder acceder a ellos.
+
+<span class="fragment current visible">
+A diferencia de programas tradicionales, para grabar los datos necesito usar una función y no un menu de ventanas.
+</span>
+
+## Guardando datos
+
+```{r ,eval=FALSE}
+sink("names_output.txt")
+for(i in 1:length(nom)) cat("La edad de", nom[i], "es", edad[i], "...\n")
+sink()
+```
+
+>- La función __sink__ lo que hace es redireccionar la salida a un archivo .txt
+>- Debemos volver a correr la función __sink__ para que se cierre la conección con el archivo.
+
+****
+
+Podríamos generar un reporte con los datos y los resultados que hemos obtenido utilizando la función __sink__.
+```{r}
+dta <- data.frame(edad, nom, gen=c(rep("Hombres",2), rep("Mujeres",3)))
+resul <- tapply(dta$edad, dta$gen, mean)
+```
+
+
+```{r,eval=FALSE}
+sink("reporte1.txt")
+
+print(resul)
+
+summary(dta)
+cat("Conclusión: La mayor media de edad se presenta en",
+    names(resul[resul==max(resul)]),"(", max(resul), ")", 
+     ", mientras que la menor edad en", 
+    names(resul[resul==min(resul)]),"(", min(resul), ")")
+sink()
+```
+
+
+****
+
+Para guardar las tablas podemos usar la función __write.csv__. Veamos.
+
+```{r}
+write.csv(dta, file="datosEdad.csv", row.names=FALSE)
+```
+
+
+Ahora podemos ver los archivos que se han generado usando la función __dir__
+
+```{r}
+dir()
+```
+
+
+## Leyendo los datos
+
+Como hemos visto hasta ahora, R trabaja con unos datos los puede procesar y modificar, todo esto usando la memoria activa (workspace), sin embargo, esa memoria es temporal, por lo que si queremos que algo de lo que hemos procesado se mantenga como un archivo, necesito decirle a R que lo guarde en mi disco duro.
+
+>- La información en el disco duro puede ser llamada al workspace de R, pero nuevamente, a diferencia de cualquier otro programa, este paso lo debemos hacer usando una función.
+
+****
+
+Vamos a volver a leer los datos que habíamos generado en R y guardado en el disco duro. Tenemos dos tipos de archivos un *.txt* y un *.csv*, para cada uno de ellos puedo usar una función. Veamos
+
+```{r}
+dta2 <- read.csv("datosEdad.csv", header=T)
+edad2 <- read.table("names_output.txt")
+
+dta2; edad2
+```
+
+## Leyendo desde una url
+
+Una ventaja de R es que podemos cargar los datos desde cualquier fuente, por ejemplo desde una página web. Vamos usar unos datos subidos en la página:
+[datos](https://github.com/Ciespinosa/datos_practicas/blob/master/AMEBIASIS_LOJA.csv)
+
+```{r}
+url <- "https://raw.githubusercontent.com/Ciespinosa/datos_practicas/master/AMEBIASIS_LOJA.csv"
+
+dtaAm <- read.csv2(url, header = TRUE, sep = ",")
+
+head(dtaAm, 5)
+```
+
+
+****
+
+<h3>¿En donde estan los datos?</h3>
+
+<span class="fragment current visible">
+Se encuentra en la memoria activa. Si apago R los datos se perderán, debo guardarlos en el disco duro. Prueben grabar los datos en el disco duro. </span>
+
+****
+
+>Hasta ahora hemos trabajado en la __consola__, cuando usabamos R como una calculadora, usando la __memoria activa__, asignando a un símbolo (nombre) unos datos, y finalmente, el disco duro cuando leemos o grabamos unos datos en el disco duro.
+
+<span class="fragment current visible">
+Aunque si lo pensamos bien, hemos usado tambien el __internet__ cuando leímos datos de la red. </span>
+
+## Uso de la Web
+
+<span class="fragment current visible">
+R puede usar el __internet__ para; i) descargar datos, ii) subir datos y iii) descargar paquetes. </span>
+
+<span class="fragment current visible">
+Hay muchas otras aplicaciones para descargar datos de la web, además, podemos usar R para subir datos a bases de datos o sencillamente hacer una pagina web. Por ahora al menos quiero que sepan que es posible hacerlo, aunque esto sería otro curso.</span>
+
+
+## Los paquetes
+
+<span class="fragment current visible">
+Los paquetes es como R organiza las funciones que nos permiten desarrollar diferentes acciones. Así, muchas funcione de estadística básica como; la media la desviación estándar, entre otras se encuentran dentro de un paquete que se denomina paquete base.  </span>
+
+<span class="fragment current visible">
+Cuando instalamos R, algunos paquetes son instalados por defecto, pero R tiene miles de paquetes así que si nosotros necesitamos trabajar con un paquete más específico lo debemos instalar.</span>
+
+## Instalando paquetes
+
+Nuevamente recuerde R no funciona con pestañas por lo que instalar un paquete se lo debe hacer usando código.
+
+```{r}
+#install.packages("xlsx")
+
+```
+
+<span class="fragment current visible">
+Esta función nos permite descargar del internet este paquete y grabarlo en nuestro disco duro. Este paquete tiene varias funciones para leer, editar y escribir archivos .xlsx.
+</span>
+
+<span class="fragment current visible">
+Para llevar del disco duro a nuestra consola, que es donde usaremos el paquete, es necesario usar una nueva función.
+</span>
+
+<span class="fragment current visible">
+__library(xlsx)__
+</span>
+
+## ¿Cómo funciona R?
+
+```{r, echo=FALSE, fig.align='center', fig.cap="Figura. Esquema del funcionamiento de r. Basado en Paradis 2003", fig.height=4, fig.width=7}
+
+x <- 1:100
+y <- 1:100 
+
+par(mar=c(1,5,1,5))
+plot(x, y, type="n", ann=FALSE,axes=FALSE, col="grey") 
+box(col="grey")
+rect(min(x), min(y)+2, max(x)-55, max(y))
+rect(min(x)+55, min(y)+2, max(x), max(y))
+
+rect(min(x)+5, min(y)+5, max(x)-60, max(y)-85, lty="dashed")
+rect(min(x)+5, min(y)+40, max(x)-60, max(y)-40, lty="dashed")
+rect(min(x)+5, min(y)+85, max(x)-60, max(y)-5, lty="dashed")
+
+text(12,10, "Resultados", adj=0)
+text(17,50, "Datos", adj=0)
+text(12,92, "Funciones", adj=0)
+
+text(62,17.5, "Archivos de salida", adj=0, cex=0.9)
+rect(min(x)+60, min(y)+5, max(x)-25, max(y)-85,  col="blue")
+rect(min(x)+80, min(y)+5, max(x)-5, max(y)-85,  col="blue")
+text(63, 11, "JPG", col="white", font=2, adj=0, cex=0.8)
+text(83, 11, "XLSX", col="white", font=2, adj=0, cex=0.8)
+
+text(63, 50, "Datos y archivos", col="black", adj=0, cex=0.9)
+text(63, 92, "Librería de 
+funciones", col="black", adj=0, cex=0.9)
+
+mtext("Internet", side=3, line =-2.5,col="black", font=3, at=115, cex=0.9)
+mtext("Comandos", side=3, line =-2.5,col="black", font=3, at=-15, cex=0.9)
+mtext("Pantalla", side=3, line =-8,col="black", font=3, at=-15, cex=0.9)
+
+mtext("Memoria Activa", side=1, line =-1,col="black", font=4, at=20, cex=0.9)
+mtext("Disco Duro", side=1, line =-1,col="black", font=4, at=80, cex=0.9)
+
+par(new=TRUE)
+par(mar=c(1,1,1,1))
+plot(x, y, type="n", ann=FALSE,axes=FALSE, col="grey") 
+arrows(93, 91, 75, 91, length=0.08,angle=30,lwd=2)
+arrows(93, 91, 45, 50, length=0.08,angle=30,lwd=2)
+
+arrows(58, 91, 45, 91, length=0.08,angle=30,lwd=2)
+arrows(58, 50, 45, 49, length=0.08,angle=30,lwd=2)
+
+arrows(9, 91, 18, 91, length=0.08,angle=30,lwd=2)
+arrows(8, 52, 18, 50, code=1, length=0.08,angle=30,lwd=2)
+arrows(37, 48, 60, 20, length=0.08,angle=30,lwd=2)
+
+rm("x","y")
+```
+
+## Recuerde
+
+> Es muy importante que antes de empezar a trabajar con R seamos conscientes de cómo funciona, esto facilitará entender lo que está haciendo cuando introduce un código.
+
+## Las funciones
+
+R opera a través de funciones. Reconocemos las funciones porque siempre están antecedidas de un `paréntesis ()`
+
+<br></br>
+
+$$función(argumento1, argumento2,.....)$$
+<br></br>
+
+<p class="fragment current visible">
+El `()` limita la función y la `,` define los argumentos.
+</p>
+
+<p class="fragment current visible">
+Existen argumentos obligatorios y argumentos que son opcionales.
+</p>
+
+****
+
+Podemos tener ayuda de R para saber cuales son los argumentos en una función.
+
+```{r}
+library(xlsx)
+args(read.xlsx)
+```
+
+
+## Pidiendo ayuda
+
+<br> </br>
+
+Cuando estamos trabajando con `R` y necesitamos usar una nueva función que no estamos claros como funciona podemos pedir ayuda.
+
+<p class="fragment current visible">
+Usamos la función `help()` o `?`
+</p>
+
+<p class="fragment current visible">
+Ejemplo; `help(sum)`
+</p>
+
+<p class="fragment current visible">
+En este caso pedimos ayuda para la función sum
+</p>
+
+# Ejercicio
+
+Espero que lo que hemos visto hasta ahora nos haya permitido tener una idea clara de como funciona R.
+
+## 
+>- Cree un proyeco con nombre Tarea1.
+>- Genere un script donde pondrá todos los códigos usados en la tarea 1.
+>- Leer el archivo leyendoDatos.txt en la pagina: xxxxx
+>- En el archivo contiene la información para desarrollar la tarea.
+
