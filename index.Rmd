@@ -4,6 +4,8 @@ subtitle: "Los primeros pasos"
 author: "Carlos Iván Espinosa"
 date: "noviembre 2020"
 output:
+  pdf_document:
+    toc: yes
   html_document:
     fig_caption: yes
     highlight: haddock
@@ -12,8 +14,6 @@ output:
     toc: yes
     toc_float:
       smooth_scroll: no
-  pdf_document:
-    toc: yes
 ---
 
 <br> </br>
@@ -468,3 +468,15 @@ Esta función nos permite descargar del internet este paquete y grabarlo en nues
 Para llevar del disco duro a nuestra consola, que es donde usaremos el paquete, es necesario usar una nueva función en este caso la función `library(xlsx)`.
 
 La instalación de los paquetes se debe hacer unicamente una vez, cuando hemos descargado el paquete este esta disponible en nuestro disco duro así que podemos llamarlo desde ahí cada vez que lo necesitemos. 
+
+# Ejercicio
+
+Espero que lo que hemos visto hasta ahora nos haya permitido tener una idea clara de como funciona R.
+
+Para deserrollar la tarea siga los siguientes pasos:
+
+- Cree un proyecto con nombre Tarea1.
+- Genere un script donde pondrá todos los códigos usados en la tarea 1.
+- Leer el archivo leyendoDatos.txt en la pagina: https://raw.githubusercontent.com/Ciespinosa/datos_practicas/master/leyendoDatos.txt
+- Para leer este archivo use la función readLines() incluya en esta la url de donde quiere obtener la información.
+- En el archivo contiene la información para desarrollar la tarea.
