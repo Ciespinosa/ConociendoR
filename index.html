@@ -1767,7 +1767,7 @@ Regresar Introducción R
 <br>
 </p>
 <blockquote>
-<p>Nota: Es importante que sea organizado en la ejecución de los códigos, siga los consejos y podrá mantener un código limpio y facil de acceder y revisar.</p>
+<p>Nota: Es importante que sea organizado en la ejecución de los códigos, siga los consejos y podrá mantener un código limpio y fácil de acceder y revisar.</p>
 </blockquote>
 <hr />
 </div>
@@ -1783,7 +1783,7 @@ Regresar Introducción R
 Figura 3. Esquema del funcionamiento de r. Basado en Paradis 2003
 </p>
 </div>
-<p>El funcionamiento de R se dá en la memoria activa, así que cada vez que iniciamos a trabajar con R es necesario llamar los datos desde el disco duro a la memoria activa. Para llamar paquetes (donde tenemos las funciones) normalmente utilizamos la función <code>library</code>, mientras que para llamar los datos utilizamos funciones como <code>read.table</code>. Algunas veces nos interesa grabar un resultado desde la memoria activa al disco duro para esto podemos utilizar funciones como <code>write.table</code>. Finalmente, no todos los paquetes disponibles se bajan cuando instalamos R, de hecho, solo se baja un paquete conocido como paquete base. Cuando se necesita un nuevo paquete, este debe llamarse desde internet, para ello utilizamos la función <code>install.packages</code>. Existe un repositorio de todos los paquetes disponibles (Comprehensive R Archive Network, <strong>CRAN</strong>) y varios países tienen espejos de estos repositorios (espejos CRAN) a partir de los cuales podemos descargar los paquetes.</p>
+<p>El funcionamiento de R se da en la memoria activa, así que cada vez que iniciamos a trabajar con R es necesario llamar los datos desde el disco duro a la memoria activa. Para llamar paquetes (donde tenemos las funciones) normalmente utilizamos la función <code>library</code>, mientras que para llamar los datos utilizamos funciones como <code>read.table</code>. Algunas veces nos interesa grabar un resultado desde la memoria activa al disco duro para esto podemos utilizar funciones como <code>write.table</code>. Finalmente, no todos los paquetes disponibles se bajan cuando instalamos R, de hecho, solo se baja un paquete conocido como paquete base. Cuando se necesita un nuevo paquete, este debe llamarse desde internet, para ello utilizamos la función <code>install.packages</code>. Existe un repositorio de todos los paquetes disponibles (Comprehensive R Archive Network, <strong>CRAN</strong>) y varios países tienen espejos de estos repositorios (espejos CRAN) a partir de los cuales podemos descargar los paquetes.</p>
 <blockquote>
 <p>Nota: Es muy importante que antes de empezar a trabajar con R seamos conscientes de cómo funciona, esto facilitará entender lo que está haciendo cuando introduce un código.</p>
 </blockquote>
@@ -1799,7 +1799,7 @@ Figura 3. Esquema del funcionamiento de r. Basado en Paradis 2003
 <hr />
 <div id="ejecución-de-comandos-e-impresión" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> Ejecución de comandos e impresión</h3>
-<p>Cuando estamos trabajando con R, nosotros podemos desarrollar una serie de acciones u operaciones que se ejecutan en la consola, luego de lo cual el resultado puede ser impreso en la consola. Veamos unos ejempos.</p>
+<p>Cuando estamos trabajando con R, nosotros podemos desarrollar una serie de acciones u operaciones que se ejecutan en la consola, luego de lo cual el resultado puede ser impreso en la consola. Veamos unos ejemplos.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#Ejecución de comandos e impresión</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a>pi<span class="op">*</span><span class="dv">3</span></span></code></pre></div>
@@ -1814,7 +1814,7 @@ Figura 3. Esquema del funcionamiento de r. Basado en Paradis 2003
 <pre><code>## [1] 9.425</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">print</span>(<span class="kw">log</span>(<span class="dv">234</span>), <span class="dt">digits =</span> <span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## [1] 5.455321115</code></pre>
-<p>Como vemos con el uso de la función <code>print()</code> tenemos la misma salida, imprime el resutado en la consola. Sin embargo, nos permite cambiar ciertas propiedades de lo que se imprime, en este caso controlar el número de decimales. Cuando trabajamos con tablas, la función print nos permite controlar la salida de esas tablas.</p>
+<p>Como vemos con el uso de la función <code>print()</code> tenemos la misma salida, imprime el resultado en la consola. Sin embargo, nos permite cambiar ciertas propiedades de lo que se imprime, en este caso controlar el número de decimales. Cuando trabajamos con tablas, la función print nos permite controlar la salida de esas tablas.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co">##Controlar la salida de tablas</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a></span>
 <span id="cb11-3"><a href="#cb11-3"></a><span class="kw">print</span>(<span class="kw">as.table</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">5</span><span class="op">:</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="dv">3</span>,<span class="dv">3</span>)))</span></code></pre></div>
@@ -1827,33 +1827,33 @@ Figura 3. Esquema del funcionamiento de r. Basado en Paradis 2003
 ## A 5 2 1
 ## B 4 1 .
 ## C 3 . .</code></pre>
-<p>En este caso el argumento <em>zero.print</em> nos permite decirle que queremos substituir los seros por un puntopodemos cambiar el punto por un “-”. Inténtalo y mira lo que obtienes.</p>
+<p>En este caso el argumento <em>zero.print</em> nos permite decirle que queremos substituir los ceros por un punto podemos cambiar el punto por un “-”. Inténtalo y mira lo que obtienes.</p>
 <p>Aunque la función print nos permite tener cierto control sobre lo que imprimimos en la consola, esta función solo puede ser aplicada a una expresión a la vez. Cuando queremos que se imprima una expresión compuesta por varias expresiones, podemos usar la función <code>cat()</code></p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co">##La función cat para imprimir vectores</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a></span>
 <span id="cb15-3"><a href="#cb15-3"></a><span class="kw">cat</span>(<span class="st">&quot;Juan tiene&quot;</span>, <span class="dv">17</span><span class="op">*</span>pi , <span class="st">&quot;años&quot;</span>, <span class="st">&quot;...</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Juan tiene 53.40708 años ...</code></pre>
-<p>La función <strong>cat</strong> permite imprimir varias cosas juntas, intente usar la expresión print para ejecutar el mismo vector. ¿Qué sucedió?. El argumento final <strong>“…-n”</strong> nos dice como debería terminar el vector. Remplace los puntos por asteriscos.</p>
+<p>La función <strong>cat</strong> permite imprimir varias cosas juntas, intente usar la expresión print para ejecutar el mismo vector. ¿Qué sucedió?. El argumento final <strong>“…-n”</strong> nos dice cómo debería terminar el vector. Remplace los puntos por asteriscos.</p>
 <p>Hasta aquí, todos los códigos que hemos ejecutado se han impreso en la consola pero no constan en ningún lado, todos los resultados de esos códigos no pueden ser usados para realizar ninguna otra acción. Hemos usado R como una calculadora, la cual nos da un resultado, pero no podemos volver a acceder a ese resultado de ninguna forma.</p>
 <p>Para acceder a los resultados necesitamos asignar el resultado a un símbolo, un nombre.</p>
 </div>
 <div id="asignación-y-generación-de-objetos" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> Asignación y generación de objetos</h3>
-<p>El trabajo que hicimos en la sección anterior no generó objetos, como había comentado los objetos son las estructuras sobra las cuales R opera. Podemos generar objetos usando la función <code>&lt;-</code>. Existen otras formas de asignar, como “=”, o “-&gt;”, sin embargo, es mejos no usarlas puesto que por ejemplo el “=” puede ser confundida con la expresión <em>igual que</em>. En el caso de la función “-&gt;” si bien cuando generamos un objeto sencillo puede usarse, cuando estamos generando una expresión más compleja es muy dificil entender si al final esta la asignación. Por estas razones es mejor que siempre use “&lt;-”.</p>
+<p>El trabajo que hicimos en la sección anterior no generó objetos, como había comentado los objetos son las estructuras sobra las cuales R opera. Podemos generar objetos usando la función <code>&lt;-</code>. Existen otras formas de asignar, como “=”, o “-&gt;”, sin embargo, es mejor no usarlas puesto que por ejemplo el “=” puede ser confundida con la expresión <em>igual que</em>. En el caso de la función “-&gt;” si bien cuando generamos un objeto sencillo puede usarse, cuando estamos generando una expresión más compleja es muy difícil entender si al final está la asignación. Por estas razones es mejor que siempre use “&lt;-”.</p>
 <p><strong>Trabajemos nuevamente en R</strong></p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co">##Asignando resultados a símbolos</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a><span class="kw">set.seed</span>(<span class="dv">23</span>)</span>
 <span id="cb17-3"><a href="#cb17-3"></a>edad &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">rnorm</span>(<span class="dv">5</span>, <span class="dv">25</span>,<span class="dv">5</span>),<span class="dv">2</span>)</span></code></pre></div>
 <p><em><strong>Un momento, algo paso no veo el resultado.</strong></em></p>
-<p>Puede chequear el “Environment” en RStudio, ¿qué puede ver ahí?. Efectivamente, aparece el nombre edad. Hemos generado un objeto que esta representado por el símbolo <em>edad</em></p>
+<p>Puede chequear el “Environment” en RStudio, ¿qué puede ver ahí?. Efectivamente, aparece el nombre edad. Hemos generado un objeto que está representado por el símbolo <em>edad</em></p>
 <p>Usar la función asignar “&lt;-”, y hemos asignado el resultado de nuestro código a un símbolo (nombre). Realmente es un símbolo, R reconoce los símbolos, es por eso que <strong>Edad</strong> no es lo mismo que <strong>edad</strong></p>
-<p>Ahora, ¿cómo imprimimos el resultado de edad?. Podemos usar las mismas funciónes que usamos antes para imprimir (print y cat) o teclear directamente el nombre.</p>
+<p>Ahora, ¿cómo imprimimos el resultado de edad?. Podemos usar las mismas funciones que usamos antes para imprimir (print y cat) o teclear directamente el nombre.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">#Imprimir los objetos</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a><span class="kw">print</span>(edad)</span></code></pre></div>
 <pre><code>## [1] 25.97 22.83 29.57 33.97 29.98</code></pre>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>edad</span></code></pre></div>
 <pre><code>## [1] 25.97 22.83 29.57 33.97 29.98</code></pre>
-<p>Vamos a jugar un poco. Usaremos la <code>función cat()</code> para imprimir un objeto que tiene varios elementos, imprimiremos cada uno de los elementos que estan asociados. En este caso tenemos un nombre de una persona y la edad de esas personas. Para esto usamos una función que genera un loop, en este caso la función <code>for()</code>, esta función permite definir un símbolo en este caso “i” y darle un valor secuencial que yo defino. Así donde esta “i” R generará un ciclo en el cual i toma el valor de 1, en la siguiente vuelta 2 y así sucesivamente hasta 5.</p>
+<p>Vamos a jugar un poco. Usaremos la <code>función cat()</code> para imprimir un objeto que tiene varios elementos, imprimiremos cada uno de los elementos que están asociados. En este caso tenemos un nombre de una persona y la edad de esas personas. Para esto usamos una función que genera un loop, en este caso la función <code>for()</code>, esta función permite definir un símbolo en este caso “i” y darle un valor secuencial que yo defino. Así donde esta “i” R generará un ciclo en el cual i toma el valor de 1, en la siguiente vuelta 2 y así sucesivamente hasta 5.</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co">#Vector de nombres</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a></span>
 <span id="cb22-3"><a href="#cb22-3"></a>nom &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Juan&quot;</span>, <span class="st">&quot;Pedro&quot;</span>, <span class="st">&quot;Ana&quot;</span>, <span class="st">&quot;Sol&quot;</span>, <span class="st">&quot;Juliana&quot;</span>)</span>
@@ -1872,7 +1872,7 @@ Figura 3. Esquema del funcionamiento de r. Basado en Paradis 2003
 <span id="cb24-2"><a href="#cb24-2"></a><span class="kw">ls</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;apellido&quot; &quot;edad&quot;     &quot;i&quot;        &quot;matriz&quot;   &quot;nom&quot;      &quot;nombre&quot;   &quot;x&quot;       
 ## [8] &quot;y&quot;</code></pre>
-<p>Podemos pedir que nos diga las característicasde esos objetos</p>
+<p>Podemos pedir que nos diga las características de esos objetos</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co">#listado con características</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a></span>
 <span id="cb26-3"><a href="#cb26-3"></a><span class="kw">ls.str</span>()</span></code></pre></div>
@@ -1887,7 +1887,7 @@ Figura 3. Esquema del funcionamiento de r. Basado en Paradis 2003
 </div>
 <div id="eliminando-objetos" class="section level3">
 <h3><span class="header-section-number">4.1.3</span> Eliminando objetos</h3>
-<p>Puede ser que necesite borrar algunos objetos que ya no los ocuparé, para ello usaremos la función <code>rm()</code>. Veamos como lo podemos hacer.</p>
+<p>Puede ser que necesite borrar algunos objetos que ya no los ocuparé, para ello usaremos la función <code>rm()</code>. Veamos cómo lo podemos hacer.</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">ls</span>(); <span class="kw">rm</span>(i); <span class="kw">ls</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;apellido&quot; &quot;edad&quot;     &quot;i&quot;        &quot;matriz&quot;   &quot;nom&quot;      &quot;nombre&quot;   &quot;x&quot;       
 ## [8] &quot;y&quot;</code></pre>
@@ -1905,7 +1905,7 @@ Figura 3. Esquema del funcionamiento de r. Basado en Paradis 2003
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">sink</span>(<span class="st">&quot;names_output.txt&quot;</span>)</span>
 <span id="cb31-2"><a href="#cb31-2"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(nom)) <span class="kw">cat</span>(<span class="st">&quot;La edad de&quot;</span>, nom[i], <span class="st">&quot;es&quot;</span>, edad[i], <span class="st">&quot;...</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
 <span id="cb31-3"><a href="#cb31-3"></a><span class="kw">sink</span>()</span></code></pre></div>
-<p>La función <strong>sink</strong> lo que hace es redireccionar la salida a un archivo .txt Debemos volver a correr la función <strong>sink</strong> para que se cierre la conección con el archivo.</p>
+<p>La función <strong>sink</strong> lo que hace es redireccionar la salida a un archivo .txt Debemos volver a correr la función <strong>sink</strong> para que se cierre la conexión con el archivo.</p>
 <p>Podríamos generar un reporte con los datos y los resultados que hemos obtenido utilizando la función <strong>sink</strong>.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>dta &lt;-<span class="st"> </span><span class="kw">data.frame</span>(edad, nom, <span class="dt">gen=</span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;Hombres&quot;</span>,<span class="dv">2</span>), <span class="kw">rep</span>(<span class="st">&quot;Mujeres&quot;</span>,<span class="dv">3</span>)))</span>
 <span id="cb32-2"><a href="#cb32-2"></a>resul &lt;-<span class="st"> </span><span class="kw">tapply</span>(dta<span class="op">$</span>edad, dta<span class="op">$</span>gen, mean)</span></code></pre></div>
@@ -1923,11 +1923,10 @@ Figura 3. Esquema del funcionamiento de r. Basado en Paradis 2003
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">write.csv</span>(dta, <span class="dt">file=</span><span class="st">&quot;datosEdad.csv&quot;</span>, <span class="dt">row.names=</span><span class="ot">FALSE</span>)</span></code></pre></div>
 <p>Ahora podemos ver los archivos que se han generado usando la función <strong>dir</strong></p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">dir</span>()</span></code></pre></div>
-<pre><code>##  [1] &quot;ConociendoR.Rmd&quot;   &quot;ConociendoR.Rproj&quot; &quot;datosEdad.csv&quot;    
-##  [4] &quot;imagen&quot;            &quot;index.html&quot;        &quot;index.pdf&quot;        
-##  [7] &quot;index.Rmd&quot;         &quot;index_files&quot;       &quot;LICENSE&quot;          
-## [10] &quot;names_output.txt&quot;  &quot;reporte1.txt&quot;      &quot;Rlogo.png&quot;        
-## [13] &quot;RStudio-Logo.png&quot;</code></pre>
+<pre><code>##  [1] &quot;ConociendoR.Rproj&quot; &quot;datosEdad.csv&quot;     &quot;imagen&quot;           
+##  [4] &quot;index.html&quot;        &quot;index.pdf&quot;         &quot;index.Rmd&quot;        
+##  [7] &quot;index_files&quot;       &quot;LICENSE&quot;           &quot;names_output.txt&quot; 
+## [10] &quot;reporte1.txt&quot;      &quot;Rlogo.png&quot;         &quot;RStudio-Logo.png&quot;</code></pre>
 </div>
 <div id="leyendo-los-datos" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Leyendo los datos</h3>
@@ -1965,18 +1964,18 @@ Figura 3. Esquema del funcionamiento de r. Basado en Paradis 2003
 ## 3   LOJA    11D01 Hombre           14         1           CHUQUIRIBAMBA
 ## 4   LOJA    11D01 Hombre            2         1           CHUQUIRIBAMBA
 ## 5   LOJA    11D01 Hombre            2         1 TAQUIL (MIGUEL RIOFRÍO)</code></pre>
-<p><strong>¿En donde estan los datos?</strong></p>
+<p><strong>¿En dónde están los datos?</strong></p>
 <p>Se encuentra en la memoria activa. Si apago R los datos se perderán, debo guardarlos en el disco duro. Prueben grabar los datos en el disco duro.</p>
-<p>Hasta ahora hemos trabajado en la <strong>consola</strong>, cuando usabamos R como una calculadora, usando la <strong>memoria activa</strong>, asignando a un símbolo (nombre) unos datos, y finalmente, el disco duro cuando leemos o grabamos unos datos en el disco duro.</p>
-<p>Aunque si lo pensamos bien, hemos usado tambien el <strong>internet</strong> cuando leímos datos de la red.</p>
+<p>Hasta ahora hemos trabajado en la <strong>consola</strong>, cuando usábamos R como una calculadora, usando la <strong>memoria activa</strong>, asignando a un símbolo (nombre) unos datos, y finalmente, el disco duro cuando leemos o grabamos unos datos en el disco duro.</p>
+<p>Aunque si lo pensamos bien, hemos usado también el <strong>internet</strong> cuando leímos datos de la red.</p>
 </div>
 </div>
 <div id="uso-de-la-web" class="section level2">
 <h2><span class="header-section-number">4.3</span> Uso de la Web</h2>
-<p>R puede usar el <strong>internet</strong> para; i) descargar datos, ii) subir datos y iii) descargar paquetes. Hay muchas otras aplicaciones para descargar datos de la web, además, podemos usar R para subir datos a bases de datos o sencillamente hacer una pagina web. Por ahora al menos quiero que sepan que es posible hacerlo, aunque esto sería otro curso.</p>
+<p>R puede usar el <strong>internet</strong> para; i) descargar datos, ii) subir datos y iii) descargar paquetes. Hay muchas otras aplicaciones para descargar datos de la web, además, podemos usar R para subir datos a bases de datos o sencillamente hacer una página web. Por ahora al menos quiero que sepan que es posible hacerlo, aunque esto sería otro curso.</p>
 <div id="los-paquetes-y-su-instalación" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Los paquetes y su instalación</h3>
-<p>Los paquetes es como R organiza las funciones que nos permiten desarrollar diferentes acciones. Así, muchas funcione de estadística básica como; la media la desviación estándar, entre otras se encuentran dentro de un paquete que se denomina paquete base.</p>
+<p>Los paquetes son como R organiza las funciones que nos permiten desarrollar diferentes acciones. Así, muchas funcione de estadística básica como; la media la desviación estándar, entre otras se encuentran dentro de un paquete que se denomina paquete base.</p>
 <p>Cuando instalamos R, algunos paquetes son instalados por defecto, pero R tiene miles de paquetes así que si nosotros necesitamos trabajar con un paquete más específico lo debemos instalar.</p>
 <div id="instalando-paquetes" class="section level4">
 <h4><span class="header-section-number">4.3.1.1</span> Instalando paquetes</h4>
@@ -1984,19 +1983,19 @@ Figura 3. Esquema del funcionamiento de r. Basado en Paradis 2003
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co">#install.packages(&quot;xlsx&quot;)</span></span></code></pre></div>
 <p>Esta función nos permite descargar del internet este paquete y grabarlo en nuestro disco duro. Este paquete tiene varias funciones para leer, editar y escribir archivos .xlsx.</p>
 <p>Para llevar del disco duro a nuestra consola, que es donde usaremos el paquete, es necesario usar una nueva función en este caso la función <code>library(xlsx)</code>.</p>
-<p>La instalación de los paquetes se debe hacer unicamente una vez, cuando hemos descargado el paquete este esta disponible en nuestro disco duro así que podemos llamarlo desde ahí cada vez que lo necesitemos.</p>
+<p>La instalación de los paquetes se debe hacer únicamente una vez, cuando hemos descargado el paquete este está disponible en nuestro disco duro así que podemos llamarlo desde ahí cada vez que lo necesitemos.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="ejercicio" class="section level1">
 <h1><span class="header-section-number">5</span> Ejercicio</h1>
-<p>Espero que lo que hemos visto hasta ahora nos haya permitido tener una idea clara de como funciona R.</p>
-<p>Para deserrollar la tarea siga los siguientes pasos:</p>
+<p>Espero que lo que hemos visto hasta ahora nos haya permitido tener una idea clara de cómo funciona R.</p>
+<p>Para desarrollar la tarea siga los siguientes pasos:</p>
 <ul>
 <li>Cree un proyecto con nombre Tarea1.</li>
 <li>Genere un script donde pondrá todos los códigos usados en la tarea 1.</li>
-<li>Leer el archivo leyendoDatos.txt en la pagina: <a href="https://raw.githubusercontent.com/Ciespinosa/datos_practicas/master/leyendoDatos.txt" class="uri">https://raw.githubusercontent.com/Ciespinosa/datos_practicas/master/leyendoDatos.txt</a></li>
+<li>Leer el archivo leyendoDatos.txt en la página: <a href="https://raw.githubusercontent.com/Ciespinosa/datos_practicas/master/leyendoDatos.txt" class="uri">https://raw.githubusercontent.com/Ciespinosa/datos_practicas/master/leyendoDatos.txt</a></li>
 <li>Para leer este archivo use la función readLines() incluya en esta la url de donde quiere obtener la información.</li>
 <li>En el archivo contiene la información para desarrollar la tarea.</li>
 </ul>

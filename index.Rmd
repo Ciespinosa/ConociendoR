@@ -4,8 +4,6 @@ subtitle: "Los primeros pasos"
 author: "Carlos Iván Espinosa"
 date: "noviembre 2020"
 output:
-  pdf_document:
-    toc: yes
   html_document:
     fig_caption: yes
     highlight: haddock
@@ -14,6 +12,8 @@ output:
     toc: yes
     toc_float:
       smooth_scroll: no
+  pdf_document:
+    toc: yes
 ---
 
 <br> </br>
@@ -142,7 +142,7 @@ e. Cada vez que en el código iniciamos un nuevo tema, podemos poner un título 
 
 <p> <br> </p>
 
->Nota: Es importante que sea organizado en la ejecución de los códigos, siga los consejos y podrá mantener un código limpio y facil de acceder y revisar.
+>Nota: Es importante que sea organizado en la ejecución de los códigos, siga los consejos y podrá mantener un código limpio y fácil de acceder y revisar.
 
 ****
 
@@ -205,7 +205,7 @@ arrows(37, 48, 60, 20, length=0.08,angle=30,lwd=2)
 
 ```
 
-El funcionamiento de R se dá en la memoria activa, así que cada vez que iniciamos a trabajar con R es necesario llamar los datos desde el disco duro a la memoria activa.  Para llamar paquetes (donde tenemos las funciones) normalmente utilizamos la función `library`, mientras que para llamar los datos utilizamos funciones como `read.table`. Algunas veces nos interesa grabar un resultado desde la memoria activa al disco duro para esto podemos utilizar funciones como `write.table`. 
+El funcionamiento de R se da en la memoria activa, así que cada vez que iniciamos a trabajar con R es necesario llamar los datos desde el disco duro a la memoria activa.  Para llamar paquetes (donde tenemos las funciones) normalmente utilizamos la función `library`, mientras que para llamar los datos utilizamos funciones como `read.table`. Algunas veces nos interesa grabar un resultado desde la memoria activa al disco duro para esto podemos utilizar funciones como `write.table`. 
 Finalmente, no todos los paquetes disponibles se bajan cuando instalamos R, de hecho, solo se baja un paquete conocido como paquete base. Cuando se necesita un nuevo paquete, este debe llamarse desde internet, para ello utilizamos la función `install.packages`. Existe un repositorio de todos los paquetes disponibles (Comprehensive R Archive Network, __CRAN__) y varios países tienen espejos de estos repositorios (espejos CRAN) a partir de los cuales podemos descargar los paquetes.
 
 >Nota: Es muy importante que antes de empezar a trabajar con R seamos conscientes de cómo funciona, esto facilitará entender lo que está haciendo cuando introduce un código.
@@ -224,7 +224,7 @@ Vamos a trabajar en R
 
 ### Ejecución de comandos e impresión
 
-Cuando estamos trabajando con R, nosotros podemos desarrollar una serie de acciones u operaciones que se ejecutan en la consola, luego de lo cual el resultado puede ser impreso en la consola. Veamos unos ejempos.
+Cuando estamos trabajando con R, nosotros podemos desarrollar una serie de acciones u operaciones que se ejecutan en la consola, luego de lo cual el resultado puede ser impreso en la consola. Veamos unos ejemplos.
 
 ```{r}
 #Ejecución de comandos e impresión
@@ -245,7 +245,7 @@ print(pi*3); print(pi*3, digits = 4) #El ; nos permite separar dos líneas de c�
 print(log(234), digits = 10)
 ```
 
-Como vemos con el uso de la función `print()` tenemos la misma salida, imprime el resutado en la consola. Sin embargo, nos permite cambiar ciertas propiedades de lo que se imprime, en este caso controlar el número de decimales. Cuando trabajamos con tablas, la función print nos permite controlar la salida de esas tablas.
+Como vemos con el uso de la función `print()` tenemos la misma salida, imprime el resultado en la consola. Sin embargo, nos permite cambiar ciertas propiedades de lo que se imprime, en este caso controlar el número de decimales. Cuando trabajamos con tablas, la función print nos permite controlar la salida de esas tablas.
 
 
 ```{r}
@@ -255,7 +255,7 @@ print(as.table(matrix(c(5:0,1,0,0),3,3)))
 print(as.table(matrix(c(5:0,1,0,0),3,3)), zero.print = ".")
 ```
 
-En este caso el argumento _zero.print_ nos permite decirle que queremos substituir los seros por un puntopodemos cambiar el punto por un "-". Inténtalo y mira lo que obtienes.
+En este caso el argumento _zero.print_ nos permite decirle que queremos substituir los ceros por un punto podemos cambiar el punto por un "-". Inténtalo y mira lo que obtienes.
 
 Aunque la función print nos permite tener cierto control sobre lo que imprimimos en la consola, esta función solo puede ser aplicada a una expresión a la vez. Cuando queremos que se imprima una expresión compuesta por varias expresiones, podemos usar la función `cat()`
 
@@ -266,7 +266,7 @@ cat("Juan tiene", 17*pi , "años", "...\n")
 
 ```
 
-La función __cat__ permite imprimir varias cosas juntas, intente usar la expresión print para ejecutar el mismo vector. ¿Qué sucedió?. El argumento final __"...\-n"__ nos dice como debería terminar el vector. Remplace los puntos por asteriscos. 
+La función __cat__ permite imprimir varias cosas juntas, intente usar la expresión print para ejecutar el mismo vector. ¿Qué sucedió?. El argumento final __"...\-n"__ nos dice cómo debería terminar el vector. Remplace los puntos por asteriscos. 
 
 
 Hasta aquí, todos los códigos que hemos ejecutado se han impreso en la consola pero no constan en ningún lado, todos los resultados de esos códigos no pueden ser usados para realizar ninguna otra acción. Hemos usado R como una calculadora, la cual nos da un resultado, pero no podemos volver a acceder a ese resultado de ninguna forma.
@@ -275,7 +275,7 @@ Para acceder a los resultados necesitamos asignar el resultado a un símbolo, un
 
 ### Asignación y generación de objetos
 
-El trabajo que hicimos en la sección anterior no generó objetos, como había comentado los objetos son las estructuras sobra las cuales R opera. Podemos generar objetos usando la función `<-`. Existen otras formas de asignar, como "=", o "->", sin embargo, es mejos no usarlas puesto que por ejemplo el "=" puede ser confundida con la expresión _igual que_. En el caso de la función "->" si bien cuando generamos un objeto sencillo puede usarse, cuando estamos generando una expresión más compleja es muy dificil entender si al final esta la asignación. Por estas razones es mejor que siempre use "<-".
+El trabajo que hicimos en la sección anterior no generó objetos, como había comentado los objetos son las estructuras sobra las cuales R opera. Podemos generar objetos usando la función `<-`. Existen otras formas de asignar, como "=", o "->", sin embargo, es mejor no usarlas puesto que por ejemplo el "=" puede ser confundida con la expresión _igual que_. En el caso de la función "->" si bien cuando generamos un objeto sencillo puede usarse, cuando estamos generando una expresión más compleja es muy difícil entender si al final está la asignación. Por estas razones es mejor que siempre use "<-".
 
 
 __Trabajemos nuevamente en R__
@@ -290,11 +290,11 @@ edad <- round(rnorm(5, 25,5),2)
 
 *__Un momento, algo paso no veo el resultado.__* 
 
-Puede chequear el "Environment" en RStudio, ¿qué puede ver ahí?. Efectivamente, aparece el nombre edad. Hemos generado un objeto que esta representado por el símbolo _edad_
+Puede chequear el "Environment" en RStudio, ¿qué puede ver ahí?. Efectivamente, aparece el nombre edad. Hemos generado un objeto que está representado por el símbolo _edad_
 
 Usar la función asignar "<-", y hemos asignado el resultado de nuestro código a un símbolo (nombre). Realmente es un símbolo, R reconoce los símbolos, es por eso que __Edad__ no es lo mismo que __edad__
 
-Ahora, ¿cómo imprimimos el resultado de edad?. Podemos usar las mismas funciónes que usamos antes para imprimir (print y cat)  o teclear directamente el nombre.
+Ahora, ¿cómo imprimimos el resultado de edad?. Podemos usar las mismas funciones que usamos antes para imprimir (print y cat)  o teclear directamente el nombre.
 
 
 ```{r}
@@ -304,7 +304,7 @@ print(edad)
 edad
 ```
 
-Vamos a jugar un poco. Usaremos la `función cat()` para imprimir un objeto que tiene varios elementos, imprimiremos cada uno de los elementos que estan asociados. En este caso tenemos un nombre de una persona y la edad de esas personas. Para esto usamos una función que genera un loop, en este caso la función `for()`, esta función permite definir un símbolo en este caso "i" y darle un valor secuencial que yo defino. Así donde esta "i" R generará un ciclo en el cual i toma el valor de 1, en la siguiente vuelta 2 y así sucesivamente hasta 5.
+Vamos a jugar un poco. Usaremos la `función cat()` para imprimir un objeto que tiene varios elementos, imprimiremos cada uno de los elementos que están asociados. En este caso tenemos un nombre de una persona y la edad de esas personas. Para esto usamos una función que genera un loop, en este caso la función `for()`, esta función permite definir un símbolo en este caso "i" y darle un valor secuencial que yo defino. Así donde esta "i" R generará un ciclo en el cual i toma el valor de 1, en la siguiente vuelta 2 y así sucesivamente hasta 5.
 
 ```{r}
 #Vector de nombres
@@ -329,7 +329,7 @@ ls()
 
 ```
 
-Podemos pedir que nos diga las característicasde esos objetos
+Podemos pedir que nos diga las características de esos objetos
 
 ```{r}
 #listado con características
@@ -341,7 +341,7 @@ ls.str()
 
 ### Eliminando objetos
 
-Puede ser que necesite borrar algunos objetos que ya no los ocuparé, para ello usaremos la función `rm()`.  Veamos como lo podemos hacer.
+Puede ser que necesite borrar algunos objetos que ya no los ocuparé, para ello usaremos la función `rm()`.  Veamos cómo lo podemos hacer.
 
 ```{r}
 ls(); rm(i); ls()
@@ -369,7 +369,7 @@ sink()
 ```
 
 La función __sink__ lo que hace es redireccionar la salida a un archivo .txt
-Debemos volver a correr la función __sink__ para que se cierre la conección con el archivo.
+Debemos volver a correr la función __sink__ para que se cierre la conexión con el archivo.
 
 Podríamos generar un reporte con los datos y los resultados que hemos obtenido utilizando la función __sink__.
 
@@ -435,22 +435,22 @@ head(dtaAm, 5)
 ```
 
 
-__¿En donde estan los datos?__
+__¿En dónde están los datos?__
 
 Se encuentra en la memoria activa. Si apago R los datos se perderán, debo guardarlos en el disco duro. Prueben grabar los datos en el disco duro.
 
-Hasta ahora hemos trabajado en la __consola__, cuando usabamos R como una calculadora, usando la __memoria activa__, asignando a un símbolo (nombre) unos datos, y finalmente, el disco duro cuando leemos o grabamos unos datos en el disco duro.
+Hasta ahora hemos trabajado en la __consola__, cuando usábamos R como una calculadora, usando la __memoria activa__, asignando a un símbolo (nombre) unos datos, y finalmente, el disco duro cuando leemos o grabamos unos datos en el disco duro.
 
-Aunque si lo pensamos bien, hemos usado tambien el __internet__ cuando leímos datos de la red.
+Aunque si lo pensamos bien, hemos usado también el __internet__ cuando leímos datos de la red.
 
 ## Uso de la Web
 
-R puede usar el __internet__ para; i) descargar datos, ii) subir datos y iii) descargar paquetes. Hay muchas otras aplicaciones para descargar datos de la web, además, podemos usar R para subir datos a bases de datos o sencillamente hacer una pagina web. Por ahora al menos quiero que sepan que es posible hacerlo, aunque esto sería otro curso.
+R puede usar el __internet__ para; i) descargar datos, ii) subir datos y iii) descargar paquetes. Hay muchas otras aplicaciones para descargar datos de la web, además, podemos usar R para subir datos a bases de datos o sencillamente hacer una página web. Por ahora al menos quiero que sepan que es posible hacerlo, aunque esto sería otro curso.
 
 
 ### Los paquetes y su instalación
 
-Los paquetes es como R organiza las funciones que nos permiten desarrollar diferentes acciones. Así, muchas funcione de estadística básica como; la media la desviación estándar, entre otras se encuentran dentro de un paquete que se denomina paquete base. 
+Los paquetes son como R organiza las funciones que nos permiten desarrollar diferentes acciones. Así, muchas funcione de estadística básica como; la media la desviación estándar, entre otras se encuentran dentro de un paquete que se denomina paquete base. 
 
 Cuando instalamos R, algunos paquetes son instalados por defecto, pero R tiene miles de paquetes así que si nosotros necesitamos trabajar con un paquete más específico lo debemos instalar.
 
@@ -467,16 +467,16 @@ Esta función nos permite descargar del internet este paquete y grabarlo en nues
 
 Para llevar del disco duro a nuestra consola, que es donde usaremos el paquete, es necesario usar una nueva función en este caso la función `library(xlsx)`.
 
-La instalación de los paquetes se debe hacer unicamente una vez, cuando hemos descargado el paquete este esta disponible en nuestro disco duro así que podemos llamarlo desde ahí cada vez que lo necesitemos. 
+La instalación de los paquetes se debe hacer únicamente una vez, cuando hemos descargado el paquete este está disponible en nuestro disco duro así que podemos llamarlo desde ahí cada vez que lo necesitemos. 
 
 # Ejercicio
 
-Espero que lo que hemos visto hasta ahora nos haya permitido tener una idea clara de como funciona R.
+Espero que lo que hemos visto hasta ahora nos haya permitido tener una idea clara de cómo funciona R.
 
-Para deserrollar la tarea siga los siguientes pasos:
+Para desarrollar la tarea siga los siguientes pasos:
 
 - Cree un proyecto con nombre Tarea1.
 - Genere un script donde pondrá todos los códigos usados en la tarea 1.
-- Leer el archivo leyendoDatos.txt en la pagina: https://raw.githubusercontent.com/Ciespinosa/datos_practicas/master/leyendoDatos.txt
+- Leer el archivo leyendoDatos.txt en la página: https://raw.githubusercontent.com/Ciespinosa/datos_practicas/master/leyendoDatos.txt
 - Para leer este archivo use la función readLines() incluya en esta la url de donde quiere obtener la información.
 - En el archivo contiene la información para desarrollar la tarea.
