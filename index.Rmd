@@ -1,8 +1,12 @@
 ---
 title: "Conociendo R:"
 subtitle: "Los primeros pasos"
-author: "Carlos Iván Espinosa"
-date: "noviembre 2020"
+author:
+- name: "Carlos Iván Espinosa"
+  affiliation:
+    - Laboratorio de ecología y servicios ecosistémicos, Universidad Técnica Particular de Loja.
+  email: ciespinosa@utpl.edu.ec
+date: "septiembre 2021"
 output:
   html_document:
     fig_caption: yes
@@ -17,9 +21,8 @@ output:
 ---
 
 <br> </br>
-
-<button name="button" onclick="https://ciespinosa.github.io/IntroduccionR.html">Regresar
-Introducción R</button> 
+Para regresar a Introducción R [![button](push1.png)
+](https://ciespinosa.github.io/IntroduccionR)
 
 ****
 
@@ -288,13 +291,14 @@ edad <- round(rnorm(5, 25,5),2)
 ```
 
 
-*__Un momento, algo paso no veo el resultado.__* 
+*__Un momento, algo paso, no veo el resultado.__* 
 
 Puede chequear el "Environment" en RStudio, ¿qué puede ver ahí?. Efectivamente, aparece el nombre edad. Hemos generado un objeto que está representado por el símbolo _edad_
 
-Usar la función asignar "<-", y hemos asignado el resultado de nuestro código a un símbolo (nombre). Realmente es un símbolo, R reconoce los símbolos, es por eso que __Edad__ no es lo mismo que __edad__
+Usar la función asignar "<-", y hemos asignado el resultado de nuestro código a un símbolo (nombre). R reconoce este nombre como un símbolo, es por eso que __Edad__ no es lo mismo que __edad__.
 
-Ahora, ¿cómo imprimimos el resultado de edad?. Podemos usar las mismas funciones que usamos antes para imprimir (print y cat)  o teclear directamente el nombre.
+Ahora, ¿cómo podemos imprimir el resultado de edad?.
+Ejecutando las mismas funciones de imprimir (print y cat) que usamos antes  o teclear directamente el nombre.
 
 
 ```{r}
@@ -304,7 +308,7 @@ print(edad)
 edad
 ```
 
-Vamos a jugar un poco. Usaremos la `función cat()` para imprimir un objeto que tiene varios elementos, imprimiremos cada uno de los elementos que están asociados. En este caso tenemos un nombre de una persona y la edad de esas personas. Para esto usamos una función que genera un loop, en este caso la función `for()`, esta función permite definir un símbolo en este caso "i" y darle un valor secuencial que yo defino. Así donde esta "i" R generará un ciclo en el cual i toma el valor de 1, en la siguiente vuelta 2 y así sucesivamente hasta 5.
+Vamos a jugar un poco. Usaremos la `función cat()` para imprimir un objeto que tiene varios elementos, imprimiremos cada uno de los elementos que están asociados. En este caso tenemos un nombre de una persona y la edad de esas personas. Para esto usamos una función que genera un loop (un proceso circular un bucle), en este caso la función `for()`. Esta función permite definir un símbolo en este caso "i" y darle un valor secuencial definido por el usuario. En el caso del ejemplo i tomará los valores de 1 a 5 (número de elementos en nom), de esta forma R generará un ciclo en el cual i toma el valor de 1, en la siguiente vuelta 2 y así sucesivamente hasta 5.
 
 ```{r}
 #Vector de nombres
@@ -318,10 +322,8 @@ for(i in 1:length(nom)) cat("La edad de", nom[i], "es", edad[i], "...\n")
 ```
 
 
-En esta segunda parte hemos trabajado en la memoria activa de la computadora la memoria RAM. Cuando define una variable en el símbolo del sistema como en este caso "edad", la variable se mantiene en su espacio de trabajo (Workspace). El espacio de trabajo se mantiene en la memoria activa de la computadora, pero se puede guardar en el disco cuando sale de R. La definición de la variable permanece en el espacio de trabajo hasta que la elimina. Podemos ver los objetos generados en el "Environment" de RStudio.
+En esta segunda parte hemos trabajado en la memoria activa de la computadora, la memoria RAM. Cuando asignamos una variable a un símbolo, como en este caso "edad", la variable se mantiene en su espacio de trabajo (Workspace). El espacio de trabajo se mantiene en la memoria activa de la computadora, pero se puede guardar en el disco cuando R se cierra. La variable permanece en el espacio de trabajo hasta que el usuario la elimine. Aunque, RStudio permite ver el workspace, podemos pedirle a R que nos muestre lo que tiene en su "workspace" usando la función `ls()`.
 
-
-Aunque, RStudio me permite ver el workspace, podemos pedirle a R que nos muestre lo que tiene en su "workspace" usando la función `ls()`.
 
 ```{r}
 #Listado del workspace
@@ -341,13 +343,14 @@ ls.str()
 
 ### Eliminando objetos
 
-Puede ser que necesite borrar algunos objetos que ya no los ocuparé, para ello usaremos la función `rm()`.  Veamos cómo lo podemos hacer.
+Puede ser que necesite borrar algunos objetos que ya no ocuparé, para ello usaremos la función `rm()`.  Veamos cómo lo podemos hacer.
 
 ```{r}
 ls(); rm(i); ls()
 ```
 
 Como ven en la primera salida de nuestro workspce consta "i", pero la segunda vez que ejecutamos ls el objeto "i" ya no aparece.
+
 Podemos usar la expresión rm(list=ls()) para borrar todos los objetos en el workspace o usar la expresión rm(list=setdiff(ls(), c("edad", "nom"))), para eliminar todo aquello que no sea "edad" ni "nom"
 
 ****
@@ -362,16 +365,16 @@ A diferencia de programas tradicionales, para grabar los datos necesito usar una
 
 ### Guardando datos
 
+Podemos usar la función __sink__ para redireccionar la salida a un archivo .txt, de esta forma, R ya no imprimirá en la consola sino que lo hará en el documento que hemos generado. Debemos volver a correr la función __sink__ para que se cierre la conexión con el archivo. Recuerden siempre cerrar esta función caso contrario todo lo que hagan se imprimirá en este archivo.
+
 ```{r ,eval=FALSE}
 sink("names_output.txt")
 for(i in 1:length(nom)) cat("La edad de", nom[i], "es", edad[i], "...\n")
 sink()
 ```
 
-La función __sink__ lo que hace es redireccionar la salida a un archivo .txt
-Debemos volver a correr la función __sink__ para que se cierre la conexión con el archivo.
+Podríamos generar un reporte con los datos utilizando la función __sink__. De esta forma, procesaremos los datos de edad y género que tenemos y los imprimiremos en un txt llamado reporte1.
 
-Podríamos generar un reporte con los datos y los resultados que hemos obtenido utilizando la función __sink__.
 
 ```{r}
 dta <- data.frame(edad, nom, gen=c(rep("Hombres",2), rep("Mujeres",3)))
@@ -392,8 +395,7 @@ cat("Conclusión: La mayor media de edad se presenta en",
 sink()
 ```
 
-
-Para guardar las tablas podemos usar la función __write.csv__. Veamos.
+Aunque la función __sink__, puede ser util para guardar rápidamente resultados por ejemplo de análisis estadísticos, no es una buena opción para guardar tablas de datos. Para guardar  tablas es mejor usar la función __write.csv__. Veamos un ejemplo.
 
 ```{r}
 write.csv(dta, file="datosEdad.csv", row.names=FALSE)
@@ -408,11 +410,11 @@ dir()
 
 ### Leyendo los datos
 
-Como hemos visto hasta ahora, R trabaja con unos datos los puede procesar y modificar, todo esto usando la memoria activa (workspace), sin embargo, esa memoria es temporal, por lo que si queremos que algo de lo que hemos procesado se mantenga como un archivo, necesito decirle a R que lo guarde en mi disco duro.
+Como hemos visto hasta ahora, R trabaja con unos datos los puede procesar y modificar, todo esto usando la memoria activa (workspace), sin embargo, esa memoria es temporal, si queremos que algo de lo procesado se mantenga como un archivo en mi disco duro, necesito decirle a R que lo guarde.
 
 La información en el disco duro puede ser llamada al workspace de R, pero nuevamente, a diferencia de cualquier otro programa, este paso lo debemos hacer usando una función.
 
-Vamos a volver a leer los datos que habíamos generado en R y guardado en el disco duro. Tenemos dos tipos de archivos un *.txt* y un *.csv*, para cada uno de ellos puedo usar una función. Veamos
+Vamos a volver a leer los datos que habíamos generado en R y guardado en el disco duro. Tenemos dos tipos de archivos un *.txt* y un *.csv*, para cada uno de ellos puedo usar una función. Veamos como hacerlo.
 
 ```{r}
 dta2 <- read.csv("datosEdad.csv", header=T)
@@ -445,29 +447,30 @@ Aunque si lo pensamos bien, hemos usado también el __internet__ cuando leímos 
 
 ## Uso de la Web
 
-R puede usar el __internet__ para; i) descargar datos, ii) subir datos y iii) descargar paquetes. Hay muchas otras aplicaciones para descargar datos de la web, además, podemos usar R para subir datos a bases de datos o sencillamente hacer una página web. Por ahora al menos quiero que sepan que es posible hacerlo, aunque esto sería otro curso.
+R puede usar el __internet__ para; i) descargar datos, ii) subir datos y iii) descargar paquetes. Hay muchas otras aplicaciones para descargar datos de la web, además, podemos usar R para subir datos a bases de datos o sencillamente hacer una página web. Por ahora quiero que sepan que es posible hacerlo, aunque esto sería otro curso.
 
 
 ### Los paquetes y su instalación
 
-Los paquetes son como R organiza las funciones que nos permiten desarrollar diferentes acciones. Así, muchas funcione de estadística básica como; la media la desviación estándar, entre otras se encuentran dentro de un paquete que se denomina paquete base. 
+Los paquetes es la forma que tiene R para organizar las funciones usadas para desarrollar diferentes acciones. Así, muchas funcione de estadística básica como; la media la desviación estándar, entre otras se encuentran dentro de un paquete que se denomina paquete base. 
 
-Cuando instalamos R, algunos paquetes son instalados por defecto, pero R tiene miles de paquetes así que si nosotros necesitamos trabajar con un paquete más específico lo debemos instalar.
+Cuando instalamos R, algunos paquetes son instalados por defecto, pero R tiene miles de paquetes, si necesitamos trabajar con un paquete más específico debemos instalarlo.
 
 #### Instalando paquetes
 
-Nuevamente recuerde R no funciona con pestañas por lo que instalar un paquete se lo debe hacer usando código. En este caso se usa la función `install.packages()`
+Nuevamente, recuerde R no funciona con pestañas, por lo que instalar un paquete se lo debe hacer usando código. En este caso se usa la función `install.packages()`
 
 ```{r}
 #install.packages("xlsx")
 
 ```
 
-Esta función nos permite descargar del internet este paquete y grabarlo en nuestro disco duro. Este paquete tiene varias funciones para leer, editar y escribir archivos .xlsx.
+La función __install.packages()__ nos permite descargar del internet los paquetes y grabarlos en nuestro disco duro. El paquete __xlsx__ tiene varias funciones para leer, editar y escribir archivos .xlsx.
 
-Para llevar del disco duro a nuestra consola, que es donde usaremos el paquete, es necesario usar una nueva función en este caso la función `library(xlsx)`.
+Para llevar el paquete del disco duro a nuestra consola, que es donde lo usaremos, es necesario usar una nueva función, en este caso la función `library(xlsx)`.
 
-La instalación de los paquetes se debe hacer únicamente una vez, cuando hemos descargado el paquete este está disponible en nuestro disco duro así que podemos llamarlo desde ahí cada vez que lo necesitemos. 
+La instalación de los paquetes se debe hacer únicamente una vez, cuando hemos descargado el paquete este está disponible en nuestro disco duro, así que podemos llamarlo desde ahí cada vez que lo necesitemos. 
+
 
 # Ejercicio
 
@@ -478,5 +481,7 @@ Para desarrollar la tarea siga los siguientes pasos:
 - Cree un proyecto con nombre Tarea1.
 - Genere un script donde pondrá todos los códigos usados en la tarea 1.
 - Leer el archivo leyendoDatos.txt en la página: https://raw.githubusercontent.com/Ciespinosa/datos_practicas/master/leyendoDatos.txt
-- Para leer este archivo use la función readLines() incluya en esta la url de donde quiere obtener la información.
-- En el archivo contiene la información para desarrollar la tarea.
+- Para leer este archivo use la función readLines() incluya en esta la url de donde quiere obtener la información. Puede usar la función de ayuda para saber como usar esta función.
+- Use la función sink e imprimir para grabar la tarea en su disco duro.
+- El archivo contiene información para desarrollar la tarea.
+
