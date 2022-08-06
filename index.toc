@@ -1,0 +1,17 @@
+\contentsline {section}{Por qué usar R}{1}{section*.2}%
+\contentsline {section}{Instalando R y RStudio}{2}{section*.3}%
+\contentsline {section}{Los primeros pasos}{4}{section*.4}%
+\contentsline {subsection}{Primer Paso: Crear un proyecto}{4}{section*.5}%
+\contentsline {section}{El funcionamiento de R}{6}{section*.6}%
+\contentsline {subsection}{Uso de la memoria activa}{7}{section*.7}%
+\contentsline {subsubsection}{Ejecución de comandos e impresión}{7}{section*.8}%
+\contentsline {subsubsection}{Asignación y generación de objetos}{8}{section*.9}%
+\contentsline {subsubsection}{Eliminando objetos}{10}{section*.10}%
+\contentsline {subsection}{Uso del disco duro}{11}{section*.11}%
+\contentsline {subsubsection}{Guardando datos}{11}{section*.12}%
+\contentsline {subsubsection}{Leyendo los datos}{12}{section*.13}%
+\contentsline {subsubsection}{Leyendo desde una url}{12}{section*.14}%
+\contentsline {subsection}{Uso de la Web}{13}{section*.15}%
+\contentsline {subsubsection}{Los paquetes y su instalación}{13}{section*.16}%
+\contentsline {paragraph}{Instalando paquetes}{13}{section*.17}%
+\contentsline {section}{Ejercicio}{14}{section*.18}%
