@@ -6,7 +6,7 @@ author:
   affiliation:
     - Laboratorio de ecología y servicios ecosistémicos, Universidad Técnica Particular de Loja.
   email: ciespinosa@utpl.edu.ec
-date: "septiembre 2021"
+date: "agosto 2022"
 output:
   html_document:
     fig_caption: yes
@@ -265,11 +265,12 @@ Aunque la función print nos permite tener cierto control sobre lo que imprimimo
 ```{r}
 ##La función cat para imprimir vectores
 
-cat("Juan tiene", 17*pi , "años", "...\n")
+cat("Juan tiene", round(17*pi, 2), "años\n", 
+    "Juan es adulto mayor")
 
 ```
 
-La función __cat__ permite imprimir varias cosas juntas, intente usar la expresión print para ejecutar el mismo vector. ¿Qué sucedió?. El argumento final __"...\-n"__ nos dice cómo debería terminar el vector. Remplace los puntos por asteriscos. 
+La función __cat__ permite imprimir varias cosas juntas, intente usar la expresión print para ejecutar el mismo vector. ¿Qué sucedió?. El argumento final __"\n"__ nos dice que hay un salto de línea.  
 
 
 Hasta aquí, todos los códigos que hemos ejecutado se han impreso en la consola pero no constan en ningún lado, todos los resultados de esos códigos no pueden ser usados para realizar ninguna otra acción. Hemos usado R como una calculadora, la cual nos da un resultado, pero no podemos volver a acceder a ese resultado de ninguna forma.
@@ -286,7 +287,7 @@ __Trabajemos nuevamente en R__
 ```{r}
 ##Asignando resultados a símbolos
 set.seed(23)
-edad <- round(rnorm(5, 25,5),2)
+edad <- round(rnorm(5, 25,40),2)
 
 ```
 
@@ -308,7 +309,7 @@ print(edad)
 edad
 ```
 
-Vamos a jugar un poco. Usaremos la `función cat()` para imprimir un objeto que tiene varios elementos, imprimiremos cada uno de los elementos que están asociados. En este caso tenemos un nombre de una persona y la edad de esas personas. Para esto usamos una función que genera un loop (un proceso circular un bucle), en este caso la función `for()`. Esta función permite definir un símbolo en este caso "i" y darle un valor secuencial definido por el usuario. En el caso del ejemplo i tomará los valores de 1 a 5 (número de elementos en nom), de esta forma R generará un ciclo en el cual i toma el valor de 1, en la siguiente vuelta 2 y así sucesivamente hasta 5.
+Vamos a jugar un poco. Usaremos la `función cat()` para imprimir un objeto que tiene varios elementos, imprimiremos cada uno de los elementos que están asociados. En este caso tenemos un nombre de una persona y la edad de esas personas. Para esto usamos una función que genera un loop (un proceso circular un bucle), en este caso la función `for()`. Esta función permite definir un símbolo en este caso "i" y darle un valor secuencial definido por el usuario. En el caso del ejemplo i tomará los valores de 1 a 5 (número de elementos en nom), de esta forma R generará un ciclo (bucle) en el cual _i_ toma el valor de _1_, en la siguiente vuelta _2_ y así sucesivamente hasta 5.
 
 ```{r}
 #Vector de nombres
@@ -317,11 +318,24 @@ nom <- c("Juan", "Pedro", "Ana", "Sol", "Juliana")
 
 #Usamos la función cat para imprimir
 
-for(i in 1:length(nom)) cat("La edad de", nom[i], "es", edad[i], "...\n")
+for(i in 1:length(nom)) cat("La edad de", nom[i], "es", edad[i], "\n")
 
 ```
 
+Pero, no sabemos que categoría tiene. Podemos incluir la categoría de joven, adulto o adulto mayor. Usaremos la función ´if()´ para pedirle a R que nos diga que categoría tiene cada uno.
 
+```{r}
+#Vector de nombres
+
+nom <- c("Juan", "Pedro", "Ana", "Sol", "Juliana")
+
+#Usamos la función cat para imprimir
+
+for(i in 1:length(nom)) cat("La edad de", nom[i], "es", edad[i], "\n",
+                            nom[i], "es un", ifelse(edad[i]<20, "joven", 
+                                               ifelse(edad[i]>50, "adulto mayor", "adulto")), "\n")
+
+```
 En esta segunda parte hemos trabajado en la memoria activa de la computadora, la memoria RAM. Cuando asignamos una variable a un símbolo, como en este caso "edad", la variable se mantiene en su espacio de trabajo (Workspace). El espacio de trabajo se mantiene en la memoria activa de la computadora, pero se puede guardar en el disco cuando R se cierra. La variable permanece en el espacio de trabajo hasta que el usuario la elimine. Aunque, RStudio permite ver el workspace, podemos pedirle a R que nos muestre lo que tiene en su "workspace" usando la función `ls()`.
 
 
@@ -365,7 +379,9 @@ A diferencia de programas tradicionales, para grabar los datos necesito usar una
 
 ### Guardando datos
 
-Podemos usar la función __sink__ para redireccionar la salida a un archivo .txt, de esta forma, R ya no imprimirá en la consola sino que lo hará en el documento que hemos generado. Debemos volver a correr la función __sink__ para que se cierre la conexión con el archivo. Recuerden siempre cerrar esta función caso contrario todo lo que hagan se imprimirá en este archivo.
+Podemos usar la función __sink__ para redireccionar la salida a un archivo .txt, de esta forma, R ya no imprimirá en la consola sino que lo hará en el documento que hemos generado. Debemos volver a correr la función __sink__ para que se cierre la conexión con el archivo. 
+
+__Recuerden:__ siempre deben cerrar esta función caso contrario todo lo que hagan se imprimirá en este archivo.
 
 ```{r ,eval=FALSE}
 sink("names_output.txt")
@@ -373,7 +389,7 @@ for(i in 1:length(nom)) cat("La edad de", nom[i], "es", edad[i], "...\n")
 sink()
 ```
 
-Podríamos generar un reporte con los datos utilizando la función __sink__. De esta forma, procesaremos los datos de edad y género que tenemos y los imprimiremos en un txt llamado reporte1.
+Podríamos generar un reporte con los datos utilizando la función __sink__. De esta forma, procesaremos los datos de edad y género que tenemos y los imprimiremos en un __.txt__ llamado reporte1.
 
 
 ```{r}
@@ -395,7 +411,9 @@ cat("Conclusión: La mayor media de edad se presenta en",
 sink()
 ```
 
-Aunque la función __sink__, puede ser util para guardar rápidamente resultados por ejemplo de análisis estadísticos, no es una buena opción para guardar tablas de datos. Para guardar  tablas es mejor usar la función __write.csv__. Veamos un ejemplo.
+Aunque la función __sink__, puede ser util para guardar rápidamente resultados, por ejemplo resultados de análisis estadísticos, no es una buena opción para guardar tablas de datos. Para guardar  tablas es mejor usar la función __write.csv__. 
+
+Veamos un ejemplo.
 
 ```{r}
 write.csv(dta, file="datosEdad.csv", row.names=FALSE)
@@ -469,7 +487,7 @@ La función __install.packages()__ nos permite descargar del internet los paquet
 
 Para llevar el paquete del disco duro a nuestra consola, que es donde lo usaremos, es necesario usar una nueva función, en este caso la función `library(xlsx)`.
 
-La instalación de los paquetes se debe hacer únicamente una vez, cuando hemos descargado el paquete este está disponible en nuestro disco duro, así que podemos llamarlo desde ahí cada vez que lo necesitemos. 
+La instalación de los paquetes se debe hacer únicamente una vez, cuando hemos descargado el paquete, este está disponible en nuestro disco duro, así que podemos llamarlo desde ahí cada vez que lo necesitemos. 
 
 
 # Ejercicio
